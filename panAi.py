@@ -25,8 +25,10 @@ st.write("### Preview of the Data")
 st.dataframe(df_preview)
 
 #smart_df = SmartDataframe(df, config={"llm": llm,})
-agent = Agent(df,description="You are a data analysis agent. Your main goal is to help non-technical users to analyze data. generate answers with information",config={"llm": llm, "open_charts":False,"save_charts":False})
-agent.train(docs='if there is spelling mistake please find the most related values also dont generate any graphs. generate answers with information')
+agent = Agent(df,
+              description="You are a data analysis agent. Provide clear, concise answers with relevant information in a descriptive format. Ensure the output is easy to understand and contextually accurate."
+              ,config={"llm": llm, "open_charts":False,"save_charts":False})
+#agent.train(docs='if there is spelling mistake please find the most related values also dont generate any graphs. generate answers with information')
 
 st.write("### Ask questions about your data")
 user_query = st.text_area("Enter your query:", "")
