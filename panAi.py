@@ -5,12 +5,12 @@ import os
 from langchain_groq import ChatGroq
 from pandasai import Agent
 
-os.environ["PANDASAI_API_KEY"] = st.secrets["pandasai"]["api_key"]
+os.environ["PANDASAI_API_KEY"] = st.secrets["general"]["PANDASAI_API_KEY"]
 
 llm = ChatGroq(
     model="mixtral-8x7b-32768",
     temperature=0,
-    api_key=st.secrets["groq"]["api_key"] ,
+    api_key=st.secrets["general"]["GROQ_API_KEY"] ,
 
 )
 
