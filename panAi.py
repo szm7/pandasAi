@@ -25,8 +25,8 @@ st.write("### Preview of the Data")
 st.dataframe(df_preview)
 
 #smart_df = SmartDataframe(df, config={"llm": llm,})
-agent = Agent(df,config={"llm": llm, "open_charts":False,"save_charts":False})
-agent.train(docs=' If there are any spelling mistakes in column names or values, infer and use the most likely correct values. For numerical results, provide them in a descriptive sentence format, e.g., The total sales for the year 2003 is 2,385,551. Do not generate any graphs.')
+agent = Agent(df,description="You are a data analysis agent. Your main goal is to help non-technical users to analyze data. generate answers with information",config={"llm": llm, "open_charts":False,"save_charts":False})
+agent.train(docs='if there is spelling mistake please find the most related values also dont generate any graphs. generate answers with information')
 
 st.write("### Ask questions about your data")
 user_query = st.text_area("Enter your query:", "")
