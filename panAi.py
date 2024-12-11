@@ -14,7 +14,7 @@ llm = ChatGroq(
 )
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv("Data.csv",na_values=['NULL', 'N/A',''],keep_default_na=False)
+df = pd.read_csv("Data.csv")
 #data = SmartDataframe(df,name = 'Retail Order Management Dataset',description = 'This dataset contains information about retail orders, including order details, customer information, and product details.')
 
 st.set_page_config(page_title="Pandas AI with ChatGroq", layout="wide")
