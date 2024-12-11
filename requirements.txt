@@ -3,4 +3,5 @@ pandasai==2.4.0
 langchain-groq==0.2.1
 pandas==1.5.3
 numpy==1.23.5
+seaborn==0.12.2
 
