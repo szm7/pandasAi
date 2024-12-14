@@ -38,7 +38,7 @@ if st.button("Run Query"):
         try:
             rephrased_query = agent.rephrase_query(user_query)
             print("The rephrased query is", rephrased_query)
-            result = agent.chat(rephrased_query)
+            result = agent.chat(user_query)
             explain = agent.explain()
             st.success("Query processed successfully!")
             st.write("### Result")
